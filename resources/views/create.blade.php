@@ -24,7 +24,13 @@
             <!-- Añadir color -->
             <div class="form-group">
         <label for="color">Color:</label>
-        <input type="color" name="color" id="color" class="form-control" value="#000000"> <!-- Cuadro de selección de color -->
+        <!-- Añadimos para seleccionar color especifico -->
+        <select name="color" id="color" class="form-control" required>
+                    <option value="red">Rojo</option>
+                    <option value="blue">Azul</option>
+                    <option value="black">Negro</option>
+                    <option value="green">Verde</option>
+                </select>
     </div>
             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
         </form>

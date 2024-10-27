@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('messages', function (Blueprint $table) {
-            $table->string('color')->nullable(); // Añadir el campo 'color'
+            $table->string('color')->after('text'); // Añadir el campo 'color'
         });
     }
 

@@ -19,6 +19,7 @@ class MessageController extends Controller
         // Validar la solicitud
         $request->validate([
             'text' => 'required|max:255',
+            'color' => 'required|in:red,blue,black,green', // Validar el color
         ]);
 
         // Crear y guardar el nuevo mensaje
