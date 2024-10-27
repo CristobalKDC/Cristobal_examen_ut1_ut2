@@ -16,12 +16,19 @@
 
         <form action="{{ route('messages.store') }}" method="POST">
             @csrf
-            <div class="form-group">
+            <!-- Añadir mensaje -->
+            <div class="form-group"> 
                 <label for="text">Mensaje:</label>
                 <textarea name="text" id="text" class="form-control" required></textarea>
             </div>
+            <!-- Añadir color -->
+            <div class="form-group">
+        <label for="color">Color:</label>
+        <input type="color" name="color" id="color" class="form-control" value="#000000"> <!-- Cuadro de selección de color -->
+    </div>
             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
         </form>
     </div>
 </body>
 </html>
+
