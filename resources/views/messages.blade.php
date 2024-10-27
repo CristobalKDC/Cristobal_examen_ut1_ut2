@@ -14,7 +14,7 @@
         @else
             <ul>
                 @foreach($messages as $message)
-                    <li style="color: {{ $message->color }};">{{ $message->text }}</li> <!-- Añadimos que aplique color al mensaje -->
+                    <li>{{ $message->text }}</li>
                 @endforeach
             </ul>
         @endif
