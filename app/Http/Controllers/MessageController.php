@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+    // Array de colores permitidos
+    protected $allowedColors = ['rojo', 'azul', 'negro', 'verde'];
+
     // Mostrar el formulario para crear un nuevo mensaje
     public function create()
     {
@@ -20,6 +23,8 @@ class MessageController extends Controller
         $request->validate([
             'text' => 'required|max:255',
             'color' => 'required|in:red,blue,black,green', // Validar el color
+        ], [
+            'color.in' => 'COLOR NO VALIDO. Debe ser uno de los siguientes: rojo,azul,negro o verde.',
         ]);
 
         // Crear y guardar el nuevo mensaje

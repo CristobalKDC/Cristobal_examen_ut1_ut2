@@ -30,7 +30,11 @@
                     <option value="blue">Azul</option>
                     <option value="black">Negro</option>
                     <option value="green">Verde</option>
+                    <option value="orange">Naranja ERROR</option>
                 </select>
+                @if ($errors->has('color'))
+            <div class="text-danger">{{ $errors->first('color') }}</div>
+        @endif
     </div>
             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
         </form>
