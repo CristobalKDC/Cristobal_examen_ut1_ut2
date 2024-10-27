@@ -36,4 +36,25 @@ class MessageController extends Controller
         // Redirigir a la vista de mensajes con un mensaje de éxito
         return redirect()->route('messages.create')->with('success', 'Mensaje creado con éxito.');
     }
+
+    //Eliminar un mensaje
+    public function showDeleteForm()
+{
+    $messages = Message::all();
+    return view('delete', compact('messages'));
+}
+
+    // Eliminar mensajes seleccionados
+    public function delete(Request $request)
+    {
+        $request->validate([
+            'messages' => 'required|array',
+            'messages.*' => 'exists:messages,id', // Validar que los IDs existan en la tabla
+        ]);
+
+        // Eliminar los mensajes seleccionados
+        Message::destroy($request->messages);
+
+        return redirect()->route('messages.delete')->with('success', 'Mensajes eliminados con éxito.');
+    }
 }
