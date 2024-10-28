@@ -10,6 +10,7 @@ class Message extends Model
     // Aseguramos que el Modelo Message Permita la Asignación Masiva
     protected $fillable = [
         'text',
-        'color'
+        'color',
+        'url'
     ];
 }
