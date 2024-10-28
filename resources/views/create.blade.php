@@ -21,11 +21,12 @@
                 <label for="text">Mensaje:</label>
                 <textarea name="text" id="text" class="form-control" required></textarea>
             </div>
+
             <!-- Añadir color -->
             <div class="form-group">
-        <label for="color">Color:</label>
-        <!-- Añadimos para seleccionar color especifico -->
-        <select name="color" id="color" class="form-control" required>
+            <label for="color">Color:</label>
+            <!-- Añadimos para seleccionar color especifico -->
+                <select name="color" id="color" class="form-control" required>
                     <option value="red">Rojo</option>
                     <option value="blue">Azul</option>
                     <option value="black">Negro</option>
@@ -33,9 +34,15 @@
                     <option value="orange">Naranja ERROR</option>
                 </select>
                 @if ($errors->has('color'))
-            <div class="text-danger">{{ $errors->first('color') }}</div>
-        @endif
-    </div>
+                    <div class="text-danger">{{ $errors->first('color') }}</div>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <label for="url">URL de la imagen:</label>
+                <input type="text" name="url" id="url" class="form-control" placeholder="Introduce la URL de la imagen">
+            </div>
+
             <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
         </form>
     </div>

@@ -30,7 +30,8 @@ class MessageController extends Controller
         // Crear y guardar el nuevo mensaje
         Message::create([
             'text' => $request->text,
-            'color' => $request->color, // Guardamos el color
+            'color' => $request->color,
+            'url' => $request->url // Guardamos la URL de la imagen
         ]);
 
         // Redirigir a la vista de mensajes con un mensaje de éxito
