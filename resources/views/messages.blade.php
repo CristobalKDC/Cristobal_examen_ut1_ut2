@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensajes</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <style>
+        /* Estilo adicional para la lista de mensajes */
+        .message-item {
+            margin-bottom: 15px; /* Espaciado entre los mensajes */
+        }
+        .message-image {
+            max-width: 100px; /* Tamaño máximo de la imagen */
+            max-height: 100px;
+            display: block; /* Asegura que la imagen esté en una nueva línea */
+            margin-top: 5px; /* Espaciado entre el texto y la imagen */
+        }
+    </style>
 </head>
 <body>
     <div class="container">

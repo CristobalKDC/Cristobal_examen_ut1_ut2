@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
-
-    // Mostrar el formulario para crear un nuevo mensaje
     public function modificar()
     {
         return view('modificar');
