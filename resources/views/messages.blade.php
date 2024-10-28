@@ -14,9 +14,21 @@
         @else
             <ul>
                 @foreach($messages as $message)
-                    <li>{{ $message->text }}</li>
+
+                
+                    @if($message->negrita == 1 && $message->subrayado == 0)
+                        <li><b>{{ $message->text }}</b></li>
+                    @elseif($message->subrayado == 1 && $message->negrita == 0)
+                        <li><u>{{ $message->text }}</u></li>
+                    @elseif($message-> negrita == 0 && $message->subrayado == 0)
+                        <li>{{ $message->text }}</li>
+                    @elseif($message-> negrita == 1 && $message->subrayado == 1)
+                        <li><u><b>{{ $message->text }}</b></u></li>
+                    @endif
+                    
                 @endforeach
             </ul>
+            <button type="submit" onclick="window.location.href='/messages/modificar';">Modificar</button>
         @endif
     </div>
 </body>
